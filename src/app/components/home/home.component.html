@@ -1,0 +1,199 @@
+<div class="wrapper">
+
+  <div class="left-image">
+    <div class="img-wrp">
+      <img class="image-class" src="/assets/undraw_surfer_re_hncq.svg" alt="No Image" />
+
+    </div>
+  </div>
+
+  <div class="right-details">
+    <div class="content-wrp">
+      <div class="img-wrp-logo">
+        <div></div>
+
+          <img class="image-class-logo" src="/assets/Lacoste-Logo.wine.svg" alt="No Image" />
+
+
+        <div class="select-lang">
+          <p-dropdown [options]="language" [(ngModel)]="selectedCity1" placeholder="Select a City">
+            <ng-template pTemplate="selectedItem">
+              <div class="country-item country-item-value" *ngIf="selectedCity1">
+                <img [src]="selectedCity1.image" class="flag-img" />
+                <div>{{selectedCity1.name}}</div>
+              </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+              <div class="country-item">
+                <img [src]="country.image" class="flag-img" />
+                <div>{{country.name}}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+      </div>
+      <h3 class="get-started">Get Started</h3>
+      <p class="para">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has <br /> been the
+        industry’s
+        standard dummy text ever since the 1500s, when an unknown printer took <br /> a galley of type and scrambled
+      </p>
+      <div class="card">
+        <div class="upload-section">
+          <div class="upload-box"></div>
+
+          <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*"
+            (onUpload)="onBasicUpload($event)" chooseLabel="Upload Photo"></p-fileUpload>
+        </div>
+        <div class="seperator"></div>
+        <div class="forms-section">
+          <div class="form-section">
+            <div class="row-group">
+              <div class="form-group">
+                <label for="">Full Name <span class="required">*</span></label>
+                <input type="text" pInputText [(ngModel)]="fullname" placeholder="John Dew" />
+              </div>
+              <div class="form-group">
+                <label for="">Mobile Number <span class="required">*</span></label>
+                <p-inputMask mask="(999) 999-9999" [(ngModel)]="mobile" placeholder="(___) ___-___"></p-inputMask>
+              </div>
+            </div>
+            <div class="row-group">
+              <div class="form-group">
+                <label for="">Set Password <span class="required">*</span></label>
+                <p-password [(ngModel)]="password" [feedback]="false" placeholder="********"></p-password>
+              </div>
+              <div class="form-group">
+                <label for="">Confirm Password <span class="required">*</span></label>
+                <p-password [(ngModel)]="confirm_password" [feedback]="false" placeholder="********"></p-password>
+              </div>
+            </div>
+            <div class="row-group">
+              <div class="form-group">
+                <label for="">Date Of Birth</label>
+                <!-- <div class="dob-select"> -->
+                <div class="dob-list">
+                  <p-dropdown [options]="monthArray" [(ngModel)]="selectedCity1" placeholder="Month"></p-dropdown>
+                  <p-dropdown [options]="dayArray" [(ngModel)]="selectedCity1" placeholder="Date"></p-dropdown>
+                  <p-dropdown [options]="yearsArray" [(ngModel)]="selectedCity1" placeholder="Year"></p-dropdown>
+                </div>
+
+                <!-- </div> -->
+              </div>
+              <div class="form-group">
+                <label for="">Language Preference</label>
+                <p-dropdown [options]="language" [(ngModel)]="selectedCity1" placeholder="Select a City">
+                  <ng-template pTemplate="selectedItem">
+                    <div class="country-item country-item-value" *ngIf="selectedCity1">
+                      <img [src]="selectedCity1.image" class="flag-img" />
+                      <div>{{selectedCity1.name}}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-country pTemplate="item">
+                    <div class="country-item">
+                      <img [src]="country.image" class="flag-img" />
+                      <div>{{country.name}}</div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+
+              </div>
+            </div>
+
+            <div class="row-group">
+              <div class="form-group-gender">
+                <label for="">Gender</label>
+                <p-selectButton [options]="genderOptions" ngDefaultControl [(ngModel)]="selectedType"></p-selectButton>
+              </div>
+            </div>
+
+            <div class="row-group">
+              <div class="form-group">
+                <label for="">Address</label>
+                <input type="text" pInputText [(ngModel)]="address"
+                  placeholder="Street Number, Flat Number, Building Name" />
+              </div>
+              <div class="form-group">
+                <label for="">Country</label>
+                <p-dropdown [options]="countries" [(ngModel)]="selectedCity1" placeholder="Select.." optionLabel="name"
+                  optionValue="code">
+
+                </p-dropdown>
+              </div>
+            </div>
+
+            <div class="row-group">
+              <div class="form-group">
+                <label for="">City</label>
+                <input type="text" pInputText [(ngModel)]="city" />
+              </div>
+              <div class="form-group">
+                <label for="">Zip</label>
+                <input type="text" pInputText [(ngModel)]="zip" />
+              </div>
+            </div>
+
+          </div>
+          <div class="seperator"></div>
+
+          <div class="form-section">
+            <div class="row-group">
+              <div class="switch">
+                <div class="switch-head">
+                  <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+                  <h5>Enable Public Bio</h5>
+                </div>
+
+                <div class="switch-head">
+                  <div style="visibility: hidden;">
+                    <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+                  </div>
+                  <p class="bio-desc">Manually update the address, city, and zip code fields. Updating the address field
+                    does not automatically update other fields.</p>
+                </div>
+              </div>
+            </div>
+            <div class="seperator"></div>
+
+
+            <div class="bio-inputs">
+              <label for="">Video URL</label>
+              <input type="text" pInputText [(ngModel)]="videoURL" placeholder="http://www.youtube.com/oiykhfkhsdkh" />
+            </div>
+
+            <div class="bio-inputs">
+              <label for="">Bio in English</label>
+              <textarea pInputTextarea [(ngModel)]="bio" placeholder="Staff bio in English"></textarea>
+            </div>
+
+            <div class="bio-inputs">
+              <label for="">Achievements in English</label>
+              <textarea pInputTextarea [(ngModel)]="acheivements" placeholder="Staff bio in English"></textarea>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="seperator"></div>
+
+        <div class="login">
+          <div class="login-left">
+            <p>You’re signing up as rashmi.kaul@gmail.com. <br />Wrong account? <a href="#">Log in</a> instead.</p>
+          </div>
+          <div class="login-right">
+            <p-button label="Continue to login"></p-button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="seperator"></div>
+<div class="footer">
+<label for="">About Fitness</label>
+<p class="para para-footer">Force Amazon Web Services uses information from your Amazon.com account to identify you and allow access to Amazon Web Services. Your use of this site is governed by our Terms of Use and Privacy Policy linked below. Your use of Amazon Web Services products and services is governed by the AWS Customer Agreement linked below unless you have entered into a separate agreement with Amazon Web Services or an AWS Value Added Reseller to purchase these products and services. The AWS Customer Agreement was updated on March 31, 2017. For more information about these updates, see Recent Changes.</p>
+</div>

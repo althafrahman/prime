@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: helvetica-text;
+  src: url(/src/assets/font/Helvetica\ Neue\ LT\ 65\ Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: helvetica-bold;
+  src: url(/src/assets/font/Helvetica\ Neue\ LT\ 73\ Bold\ Extended.woff) format("woff");
+}
+
+@font-face {
+  font-family: helvetica-x-bold;
+  src: url(/src/assets/font/Helvetica\ Neue\ LT\ 77\ Bold\ Condensed\ Oblique.woff) format("woff");
+}
+
+html{
+  margin: 0;
+  padding: 0;
+  font-family: 'helvetica-text', Arial, Helvetica, sans-serif;
+}
+
+body{
+top: 0px;
+left: 0px;
+background: #F1F6FC 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+
+.p-inputtext, .p-inputwrapper, .p-dropdown{
+  width: 100% !important;
+}
+
+.p-button.p-component.p-ripple.ng-star-inserted {
+  font-size: 14px;
+  padding: 5px 15px;
+}
